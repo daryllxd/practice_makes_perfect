@@ -5,10 +5,10 @@
   .add-task
     %h1 Add Task
     = simple_form_for @task do |task|
-      = task.input :name 
+      = task.input :name, input_html: { required: "" }
       = task.input :email
       = task.input :owner
-      = task.input :priority
+      = task.input :priority, as: :radio_buttons
       = task.input :private
       = task.input :deadline
       = task.button :submit
