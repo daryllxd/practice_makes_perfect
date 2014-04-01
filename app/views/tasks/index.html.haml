@@ -4,3 +4,11 @@
     %h1 All Tasks
   .add-task
     %h1 Add Task
+    = simple_form_for @task do |task|
+      = task.input :name 
+      = task.input :email
+      = task.input :owner
+      = task.input :priority
+      = task.input :private
+      = task.input :deadline
+      = task.button :submit
