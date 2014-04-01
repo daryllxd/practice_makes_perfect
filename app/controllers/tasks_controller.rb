@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all.private
+    @tasks = Task.private.paginate(page: params[:page], per_page: 3)
     @task = Task.new
   end
 
