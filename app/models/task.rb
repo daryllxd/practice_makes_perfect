@@ -4,4 +4,8 @@ class Task < ActiveRecord::Base
   validates :owner, presence: true
   validates :priority, presence: true
   validates :deadline, presence: true
+
+  def self.private
+    where(private: true)
+  end
 end
