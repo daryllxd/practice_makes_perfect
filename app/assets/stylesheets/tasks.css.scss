@@ -1,3 +1,6 @@
+
+$task-red: #FF0000;
+
 .main {
   @include outer-container();
 }
@@ -15,6 +18,10 @@
 .task-header {
   @include pad();
   @include linear-gradient(to bottom, #8fdce5, #3dc3d1);
+}
+
+.task-delete {
+  @include button(shiny, $task-red);
 }
 
 .created {

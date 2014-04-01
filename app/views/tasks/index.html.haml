@@ -12,7 +12,7 @@
         .task-body
           %p= "Deadline: #{task.deadline}"
           %p= "Priority: #{task.priority}"
-          = link_to "Delete Task", task, method: :delete
+          = link_to "Delete Task", task, method: :delete, class: "task-delete", confirm: "Delete this task?"
     = will_paginate(@tasks)
   .add-task
     %h1 Add Task
