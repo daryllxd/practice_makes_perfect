@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.private.paginate(page: params[:page], per_page: 3)
+    @task_priorities = Task.priorities
     @task = Task.new
   end
 
@@ -9,7 +10,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_path, notice: "Created!"
     else
-      redirect_to tasks_path, notice: @task.errors
+      redirect_to tasks_path, notice: @task.errors.messages
     end
   end
 

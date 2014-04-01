@@ -16,8 +16,9 @@ $task-red: #FF0000;
 }
 
 .task-header {
-  @include pad();
+  @include pad(0.5em 0.8em );
   @include linear-gradient(to bottom, #8fdce5, #3dc3d1);
+  text-shadow: 0 0 0 #CCC;
 }
 
 .task-delete {

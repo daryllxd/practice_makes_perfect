@@ -7,12 +7,12 @@
     - @tasks.each do |task|
       .task
         .task-header
-          %h2= "Task: #{task.name}"
+          %h2.task-name= "#{task.name}"
           %p.created= "Created by #{task.owner}"
         .task-body
           %p= "Deadline: #{task.deadline}"
           %p= "Priority: #{task.priority}"
-          = link_to "Delete Task", task, method: :delete, class: "task-delete", confirm: "Delete this task?"
+          = link_to "Delete Task", task, method: :delete, class: "task-delete", data: { confirm: "Delete this task?" }
     = will_paginate(@tasks)
   .add-task
     %h1 Add Task
@@ -20,7 +20,7 @@
       = task.input :name, input_html: { required: "" }
       = task.input :email
       = task.input :owner
-      = task.input :priority, as: :radio_buttons
+      = task.input :priority, as: :radio_buttons, collection: @task_priorities
       = task.input :private, checked_value: false, unchecked_value: true
       = task.input :deadline
       = task.button :submit
