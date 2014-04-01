@@ -1,12 +1,14 @@
 .main
   .errors
   .tasks
-    %h1 All Tasks
+    .blurb
+      %h1 TaskRoulette
+      %p.lead Get your tasks in here.
     - @tasks.each do |task|
       .task
         .task-header
           %h2= "Task: #{task.name}"
-          %p= "Created by #{task.owner}"
+          %p.created= "Created by #{task.owner}"
         .task-body
           %p= "Deadline: #{task.deadline}"
           %p= "Priority: #{task.priority}"

@@ -3,9 +3,29 @@
 }
 
 .tasks {
-  @include span-columns(12);
+  @include span-columns(6);
+}
+
+.task {
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  margin-bottom: 0.5em;
+}
+
+.task-header {
+  @include pad();
+  @include linear-gradient(to bottom, #8fdce5, #3dc3d1);
+}
+
+.created {
+}
+
+.task-body {
+  @include pad;
 }
 
 .add-task {
-  @include span-columns(12);  
+  @include span-columns(6);  
+  @include pad;
+  box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.3);
 }
