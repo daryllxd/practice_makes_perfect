@@ -3,7 +3,7 @@
   .tasks
     .blurb
       %h1 TaskRoulette
-      %p.lead Get your tasks in here.
+      %p.lead Totally original thingie
     - @tasks.each do |task|
       .task
         .task-header
@@ -22,5 +22,5 @@
       = task.input :owner
       = task.input :priority, as: :radio_buttons, collection: @task_priorities
       = task.input :private, checked_value: false, unchecked_value: true
-      = task.input :deadline
+      = task.input :deadline, as: :date
       = task.button :submit

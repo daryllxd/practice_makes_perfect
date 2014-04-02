@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  PRIORITIES = %w{low medium high}
+  PRIORITIES = %w{Low Medium High}
   validates :name, presence: true
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }
   validates :owner, presence: true

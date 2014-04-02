@@ -1,5 +1,4 @@
-
-$task-red: #FF0000;
+$task-red: desaturate(#FF0000, 10%);
 
 .main {
   @include outer-container();
@@ -16,13 +15,14 @@ $task-red: #FF0000;
 }
 
 .task-header {
-  @include pad(0.5em 0.8em );
+  @include pad(0.5em 0.8em 0.2em);
   @include linear-gradient(to bottom, #8fdce5, #3dc3d1);
   text-shadow: 0 0 0 #CCC;
 }
 
 .task-delete {
-  @include button(shiny, $task-red);
+  @include button(simple, $task-red);
+  font-size: 1em;
 }
 
 .created {
